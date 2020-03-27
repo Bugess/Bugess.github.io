@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html>
+<head hexo-theme='https://volantis.js.org/#'>
+  <meta charset="utf-8">
+  <!-- SEO相关 -->
+  
+    
+  
+  <!-- 渲染优化 -->
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- 页面元数据 -->
+  
+    <title>将Hexo博客部署到服务器 - My Blogs</title>
+  
+    <meta name="keywords" content="服务器,博客部署">
+  
+  
+    <meta name="description" content="1 服务器配置服务器是 centOS 7.3 （或者直接重置阿里服务器系统为宝塔面板，系统也为CentOS 7.3）
+点击”远程连接”
+">
+  
+
+  <!-- feed -->
+  
+
+  <!-- import meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+  
+
+  <!-- import link -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  <div id="loading-bar-wrapper">
+  <div id="loading-bar"></div>
+</div>
+<header class="l_header shadow blur">
+
+  <div class='wrapper'>
+    <div class='nav-sub container--flex'>
+      <a class="logo flat-box"></a>
+      <ul class='switcher h-list'>
+        <li><a class="s-comment flat-btn fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc flat-btn fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+      </ul>
+    </div>
+		<div class="nav-main container container--flex">
+      
+        
+        <a class="logo flat-box" target="_self" href='/'>
+          
+          
+          
+          
+            MY BOLG <b><sup style='color:#3AA757'></sup></b>
+          
+        </a>
+      
+
+			<div class='menu navigation'>
+				<ul class='h-list'>
+          
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/
+                  
+                  
+                  
+                    id="home"
+                  >
+                  
+                    <i class='fas fa-rss fa-fw'></i>
+                  
+                  Blog
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/categories/
+                  
+                  
+                  
+                    id="categories"
+                  >
+                  
+                    <i class='fas fa-folder-open fa-fw'></i>
+                  
+                  Categories
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/tags/
+                  
+                  
+                  
+                    id="tags"
+                  >
+                  
+                    <i class='fas fa-tags fa-fw'></i>
+                  
+                  Tags
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/archives/
+                  
+                  
+                  
+                    id="archives"
+                  >
+                  
+                    <i class='fas fa-archive fa-fw'></i>
+                  
+                  Archive
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  
+                    <i class='fas fa-link fa-fw'></i>
+                  
+                  Friends
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="flat-box" href=/about/
+                  
+                  
+                  
+                    id="about"
+                  >
+                  
+                    <i class='fas fa-info-circle fa-fw'></i>
+                  
+                  About
+                </a>
+                
+              </li>
+            
+          
+          
+				</ul>
+			</div>
+
+      
+        <div class="m_search">
+          <form name="searchform" class="form u-search-form">
+            <i class="icon fas fa-search fa-fw"></i>
+            <input type="text" class="input u-search-input" placeholder="搜索" />
+          </form>
+        </div>
+      
+
+			<ul class='switcher h-list'>
+				
+					<li><a class="s-search flat-btn fas fa-search fa-fw" target="_self" href='javascript:void(0)'></a></li>
+				
+				<li><a class="s-menu flat-btn fas fa-bars fa-fw" target="_self" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+	</div>
+</header>
+<ul class="menu-phone navigation white-box">
+  
+  
+    <li>
+      <a class="flat-box" href=/
+        
+        
+        
+          id="home"
+        >
+        
+          <i class='fas fa-rss fa-fw'></i>
+        
+        博客
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/categories/
+        
+        
+        
+          id="categories"
+        >
+        
+          <i class='fas fa-folder-open fa-fw'></i>
+        
+        分类
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/tags/
+        
+        
+        
+          id="tags"
+        >
+        
+          <i class='fas fa-tags fa-fw'></i>
+        
+        标签
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/archives/
+        
+        
+        
+          id="archives"
+        >
+        
+          <i class='fas fa-archive fa-fw'></i>
+        
+        归档
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/friends/
+        
+        
+        
+          id="friends"
+        >
+        
+          <i class='fas fa-link fa-fw'></i>
+        
+        友链
+      </a>
+    </li>
+  
+    <li>
+      <a class="flat-box" href=/about/
+        
+        
+        
+          id="about"
+        >
+        
+          <i class='fas fa-info-circle fa-fw'></i>
+        
+        关于
+      </a>
+    </li>
+  
+</ul>
+<script>setLoadingBarProgress(40);</script>
+
+
+
+  <div class="l_body nocover">
+    <div class='body-wrapper'>
+      
+
+<div class='l_main'>
+  
+
+  
+    <article id="post" class="post white-box shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+    
+      <a title='将Hexo博客部署到服务器' href='/2020/03/27/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/'><img class='thumbnail' src='https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%B0%81%E9%9D%A2.png'></a>
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2020/03/27/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+        将Hexo博客部署到服务器
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://bibiqo.cn" rel="nofollow">
+    <img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%A4%B4%E5%83%8F/avatar.png">
+    <p>Burgess</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%8A%80%E6%9C%AF/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>技术</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Mar 27, 2020</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h2 id="1-服务器配置"><a href="#1-服务器配置" class="headerlink" title="1 服务器配置"></a>1 服务器配置</h2><p>服务器是 centOS 7.3 （或者直接重置阿里服务器系统为宝塔面板，系统也为CentOS 7.3）</p>
+<p>点击”远程连接”</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/1.png" alt=""></p>
+<a id="more"></a>
+
+<p>输入以下命令，切换到root账号</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su root</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/2.png" alt=""></p>
+<h3 id="1-1-git配置"><a href="#1-1-git配置" class="headerlink" title="1.1 git配置"></a>1.1 git配置</h3><h4 id="1、安装git在刚刚的黑框里输入："><a href="#1、安装git在刚刚的黑框里输入：" class="headerlink" title="1、安装git在刚刚的黑框里输入："></a>1、安装git在刚刚的黑框里输入：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install git</span><br></pre></td></tr></table></figure>
+
+<p>然后回车，等待一下就安装好了。中途会出现</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Is this ok [y/d/N]:</span><br></pre></td></tr></table></figure>
+
+<p>输入 ： y 回车即可</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/3.png" alt=""></p>
+<p>此时git已经安装成功。</p>
+<h4 id="2、创建git账户在命令框输入"><a href="#2、创建git账户在命令框输入" class="headerlink" title="2、创建git账户在命令框输入"></a>2、创建git账户在命令框输入</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser git</span><br></pre></td></tr></table></figure>
+
+<h4 id="3、添加git账户权限"><a href="#3、添加git账户权限" class="headerlink" title="3、添加git账户权限"></a>3、添加git账户权限</h4><ol>
+<li><pre><code class="shell">chmod 740 /etc/sudoers
+vim /etc/sudoers
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![](https:&#x2F;&#x2F;bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com&#x2F;images&#x2F;%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8&#x2F;4.png)</span><br><span class="line"></span><br><span class="line">输入上面的命令，回车之后，进入编辑界面。</span><br><span class="line"></span><br><span class="line">![](https:&#x2F;&#x2F;bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com&#x2F;images&#x2F;%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8&#x2F;5.png)</span><br><span class="line"></span><br><span class="line">这里要先点击 “i” 键，进入编辑模式，然后找到一下内容的地方：</span><br><span class="line"></span><br><span class="line">1. &#96;&#96;&#96;shell</span><br><span class="line">   Allow root to run any commands anywhere</span><br><span class="line">   root ALL&#x3D;(ALL) ALL</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ol>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/6.png" alt=""></p>
+<p>添加以下内容：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git ALL=(ALL) ALL</span><br></pre></td></tr></table></figure>
+
+<p>然后按 “Esc” 键，此时最底下的—INSERT—消失，再输入 “:wq”，即保存退出。</p>
+<h4 id="4、改回权限"><a href="#4、改回权限" class="headerlink" title="4、改回权限"></a>4、改回权限</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 400 /etc/sudoers</span><br></pre></td></tr></table></figure>
+
+<h4 id="5、设置git账户密码"><a href="#5、设置git账户密码" class="headerlink" title="5、设置git账户密码"></a>5、设置git账户密码</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd git</span><br></pre></td></tr></table></figure>
+
+<p>输入两次密码就设置成功了。注意，linux下输入密码是不显示****的，你直接输入，输完回车就行了。</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/7.png" alt=""></p>
+<h3 id="1-2-创建仓库目录及相关配置"><a href="#1-2-创建仓库目录及相关配置" class="headerlink" title="1.2 创建仓库目录及相关配置"></a>1.2 创建仓库目录及相关配置</h3><p>1、创建目录在var目录下创建repo作为Git仓库目录，返回服务端命令行切换到root账户，然后输入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/repo</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/8.png" alt=""></p>
+<p>赋予权限：</p>
+<ol>
+<li><pre><code class="shell">chown -R git:git /var/repo
+chmod -R 755 /var/repo
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">接下来创建hexo目录作为网站根目录，并赋予权限：</span><br><span class="line"></span><br><span class="line">1. &#96;&#96;&#96;shell</span><br><span class="line">   mkdir &#x2F;var&#x2F;hexo</span><br><span class="line">   chown -R git:git &#x2F;var&#x2F;hexo</span><br><span class="line">   chmod -R 755 &#x2F;var&#x2F;hexo</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ol>
+<p>接下来创建一个空白的git仓库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /var/repo</span><br><span class="line">git init --bare hexo.git</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/9.png" alt=""></p>
+<p>创建一个新的 Git 钩子，用于自动部署.在 /var/repo/hexo.git 下，有一个自动生成的 hooks 文件夹。我们需要在里边新建一个新的钩子文件 post-receive。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /var/repo/hexo.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
+
+<p>进入编辑模式，然后将下面那两行代码粘贴进去，保存退出。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">git --work-tree=/var/hexo --git-dir=/var/repo/hexo.git checkout -f</span><br></pre></td></tr></table></figure>
+
+<p>修改权限：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown -R git:git /var/repo/hexo.git/hooks/post-receive</span><br><span class="line">chmod +x /var/repo/hexo.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-免密远程连接服务器（在本地端）"><a href="#2-免密远程连接服务器（在本地端）" class="headerlink" title="2 免密远程连接服务器（在本地端）"></a>2 免密远程连接服务器（在本地端）</h2><p><strong>免密远程连接服务器</strong>任意处打开Git Bash：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i C:/Users/你的用户名/.ssh/id_rsa.pub git@服务器IP</span><br><span class="line">	例如：ssh-copy-id -i C:/Users/ASUS/.ssh/id_rsa.pub</span><br><span class="line">git@37.63.228.168ssh git@你的服务器ip #测试能否成功免密远程连接</span><br></pre></td></tr></table></figure>
+
+<p><em>此时远程连接应该不需要密码！！！</em></p>
+<p><strong>如果仍需要密码，请仔细检查步骤</strong></p>
+<p>如果有报错，请把错误提示放到<strong>Google</strong>上搜索解决方案*</p>
+<p>到这里Git仓库已经搭建完毕了。</p>
+<h2 id="3-配置Nginx（宝塔面板内）"><a href="#3-配置Nginx（宝塔面板内）" class="headerlink" title="3 配置Nginx（宝塔面板内）"></a>3 配置Nginx（宝塔面板内）</h2><h3 id="3-1-配置Nginx"><a href="#3-1-配置Nginx" class="headerlink" title="3.1 配置Nginx"></a>3.1 配置Nginx</h3><p>为了部署和维护，我们使用宝塔面板来一键部署Nginx</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; bash install.sh</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/10.png" alt=""></p>
+<p>（或者将系统重置为宝塔面板）</p>
+<p>复制这个地址打开，输入账号密码即可进入宝塔面板。</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/11.png" alt=""></p>
+<p>注意：这里也有可能你进不去面板页面，是因为你的服务器没有开8888这个端口（具体看你的宝塔面板连接的端口），去阿里云轻量服务器控制台中的“安全”-&gt;“防火墙”，右上角的”添加规则”，添加相应的端口即可。看下面的第二张图。</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/13.png" alt=""></p>
+<p>另外如果忘记了宝塔用户名密码，可以去你服务器终端输入：</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/14.png" alt=""></p>
+<p>进入面板之后，会提示叫你修改端口，点击”立即修改”,可以看到”面板端口”这时候是8888，自己选一个值，然后先去服务器防火墙上开放这个端口，跟刚刚的”添加规则”操作一样。再回到宝塔面板页面将”面板端口”的值修改成你刚刚开放的端口值。然后需要用新端口，重新进入宝塔面板，就是将原有的链接”:”后面的值改成你的端口即可。</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/15.png" alt=""></p>
+<p>在宝塔面板，进入软件商店，输入”Nginx”，然后搜索，安装免费的那个。</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/16.png" alt=""></p>
+<p>等待部署完成。部署完成之后，点击网站，添加站点，填写你的域名，没有的话写你的服务器ip地址。其他的不要改。</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/17.png" alt=""></p>
+<p>填写完之后提交，然后点击”设置”</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/18.png" alt=""></p>
+<p>点击”配置文件”</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">listen 80;</span><br><span class="line"><span class="meta">#</span><span class="bash"> server_name填写你自己的域名，没有的话填ip</span></span><br><span class="line">server_name hjxlog.com;</span><br><span class="line">index index.php index.html index.htm default.php default.htm default.html;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 这里root填写自己的网站根目录，修改为/var/hexo</span></span><br><span class="line">root /var/hexo;</span><br></pre></td></tr></table></figure>
+
+<p>保存，然后选择“设置”-“网站目录”，将网站目录修改成以下，保存。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/var/hexo</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/19.png" alt=""></p>
+<p>回到服务器终端，重启宝塔服务，使之生效。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service bt restart</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-修改hexo配置（本地hexo目录）"><a href="#4-修改hexo配置（本地hexo目录）" class="headerlink" title="4  修改hexo配置（本地hexo目录）"></a>4  修改hexo配置（本地hexo目录）</h2><h3 id="4-1-修改hexo配置"><a href="#4-1-修改hexo配置" class="headerlink" title="4.1 修改hexo配置"></a>4.1 修改hexo配置</h3><p>进入本地电脑hexo博客的根目录，编辑<strong>站点配置文件 _config.yml</strong>，找到deploy，修改成以下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line"><span class="meta">#</span><span class="bash">repo改为repo: git@你的域名:/var/repo/hexo.git</span></span><br><span class="line">repo: git@hjxlog.com:/var/repo/hexo.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+
+<p>最后在本地电脑hexo博客的根目录右击，Git Bash Here，输入以下命令部署</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure>
+
+<p>这时候可能出现权限问题，导致部署到git失败。</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/20.png" alt=""></p>
+<p>在服务器终端输入以下命令即可：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chown -R git:git /var/repo/</span><br><span class="line">chown -R git:git /var/hexo/</span><br></pre></td></tr></table></figure>
+
+<p>最后再hexo d -g部署，应该就可以看到部署成功了</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/21.png" alt=""></p>
+<p>自此，已经将博客从GitHub pages搬到阿里云服务器了。</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/22.png" alt=""></p>
+<h2 id="5-将网站添加https访问（宝塔面板）"><a href="#5-将网站添加https访问（宝塔面板）" class="headerlink" title="5 将网站添加https访问（宝塔面板）"></a>5 将网站添加https访问（宝塔面板）</h2><p>去阿里云申请一个免费的SSL证书，好像要备案，有点忘记了，很快就申请下来了。</p>
+<p>进入宝塔面板，”网站”，”设置”，”SSL，”其他证书”</p>
+<p>也可以点亮强制HTTPS按钮</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/23.png" alt=""></p>
+<p>将你申请的证书<em>.key以及</em>.pem内容，粘贴进去然后保存即可。</p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/24.png" alt=""></p>
+<p><img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/25.png" alt=""></p>
+<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6 总结"></a>6 总结</h2><p>在部署网站的时候，由于之前对Linux没有经验，网络上看到几篇博客，还是没能部署成功，有些博客比如命令中的单词拼写错误，或者前后不衔接，导致部署一直有问题。</p>
+<p>还好在部署的同时去网上学一些Linux基本命令，学到了进入编辑模式，编辑完怎么退出等等。之前看了一篇博客，可能作者默认大家都会了，结果我卡在这里了一下。</p>
+<p>总的来说，部署还是比较简单的，第一次没成功的同学不要轻易放弃，多去网上找找答案，努力解决问题，加油！如果因为看我的博客，在部署过程当中出现任何问题，请私信我或者邮箱联系我，帮助大家一起解决问题。</p>
+
+          
+            <br>
+            
+  
+    
+    
+
+<section class="widget copyright  desktop">
+  <div class='content'>
+    
+      <blockquote>
+        
+          
+            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+          
+        
+          
+            <p>本文永久链接是：<a href=https://bibiqo.cn/2020/03/27/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/>https://bibiqo.cn/2020/03/27/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</a></p>
+          
+        
+      </blockquote>
+    
+  </div>
+</section>
+
+  
+
+  
+    
+    
+
+<section class="widget qrcode  desktop">
+  
+
+  <div class='content article-entry'>
+    
+      
+        <div class='fancybox'><img src='https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/pay/alipay.png'
+        
+          height='64px'
+        ></div>
+      
+    
+      
+        <div class='fancybox'><img src='https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/pay/weixin.png'
+        
+          height='64px'
+        ></div>
+      
+    
+  </div>
+</section>
+
+  
+
+
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-27T22:03:28+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Mar 27, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>服务器</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>博客部署</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://bibiqo.cn/2020/03/27/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/&title=将Hexo博客部署到服务器 - My Blogs&pics=https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%B0%81%E9%9D%A2.png&summary=1 服务器配置服务器是 centOS 7.3 （或者直接重置阿里服务器系统为宝塔面板，系统也为CentOS 7.3）
+点击”远程连接”
+"
+          
+          >
+          
+            <img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%A4%B4%E5%83%8F/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://bibiqo.cn/2020/03/27/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/&title=将Hexo博客部署到服务器 - My Blogs&pics=https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%B0%81%E9%9D%A2.png&summary=1 服务器配置服务器是 centOS 7.3 （或者直接重置阿里服务器系统为宝塔面板，系统也为CentOS 7.3）
+点击”远程连接”
+"
+          
+          >
+          
+            <img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%A4%B4%E5%83%8F/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=https://bibiqo.cn/2020/03/27/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/&title=将Hexo博客部署到服务器 - My Blogs&pics=https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%B0%86Hexo%E9%83%A8%E7%BD%B2%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/%E5%B0%81%E9%9D%A2.png&summary=1 服务器配置服务器是 centOS 7.3 （或者直接重置阿里服务器系统为宝塔面板，系统也为CentOS 7.3）
+点击”远程连接”
+"
+          
+          >
+          
+            <img src="https://bugessgithubio-1259099613.cos.ap-chengdu.myqcloud.com/images/%E5%A4%B4%E5%83%8F/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/02/21/Mybatis%EF%BC%88%E4%B8%80%EF%BC%89/'>
+                <p class='title'>Mybatis（一）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>Mybatis:    实体类    mapper接口    mapper.xml配置文件    applicationContext.xml        配置连接数据库的驱动，URL，账号和...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
+
+  <article class="post white-box comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      
+      
+      
+      
+        <section id="comments">
+          <div id="valine_container" class="valine_thread">
+            <i class="fas fa-spinner fa-spin fa-fw"></i>
+          </div>
+        </section>
+      
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '将Hexo博客部署到服务器',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+  
+
+  
+    
+    
+
+
+  <section class="widget toc-wrapper shadow desktop">
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>Catalog</span>
+    
+  </header>
+
+
+    <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-服务器配置"><span class="toc-text">1 服务器配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-git配置"><span class="toc-text">1.1 git配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、安装git在刚刚的黑框里输入："><span class="toc-text">1、安装git在刚刚的黑框里输入：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、创建git账户在命令框输入"><span class="toc-text">2、创建git账户在命令框输入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、添加git账户权限"><span class="toc-text">3、添加git账户权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、改回权限"><span class="toc-text">4、改回权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、设置git账户密码"><span class="toc-text">5、设置git账户密码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-创建仓库目录及相关配置"><span class="toc-text">1.2 创建仓库目录及相关配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-免密远程连接服务器（在本地端）"><span class="toc-text">2 免密远程连接服务器（在本地端）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-配置Nginx（宝塔面板内）"><span class="toc-text">3 配置Nginx（宝塔面板内）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-配置Nginx"><span class="toc-text">3.1 配置Nginx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-修改hexo配置（本地hexo目录）"><span class="toc-text">4  修改hexo配置（本地hexo目录）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-修改hexo配置"><span class="toc-text">4.1 修改hexo配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-将网站添加https访问（宝塔面板）"><span class="toc-text">5 将网站添加https访问（宝塔面板）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-总结"><span class="toc-text">6 总结</span></a></li></ol>
+    </div>
+  </section>
+
+
+  
+
+
+</aside>
+
+
+  
+  <footer class="clearfix">
+    <br><br>
+    
+      
+        <div class="aplayer-container">
+          
+
+  
+    <meting-js
+      theme='#1BCDFC'
+      autoplay='false'
+      volume='0.7'
+      loop='all'
+      order='list'
+      fixed='false'
+      list-max-height='340px'
+      server='netease'
+      type='playlist'
+      id='3175833810'
+      list-folded='true'>
+    </meting-js>
+  
+
+
+        </div>
+      
+    
+      
+        <br>
+        <div class="social-wrapper">
+          
+            
+              <a href="/atom.xml"
+                class="social fas fa-rss flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="mailto:2150635176@qq.com"
+                class="social fas fa-envelope flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+            
+              <a href="https://github.com/Bugess"
+                class="social fab fa-github flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+              </a>
+            
+          
+        </div>
+      
+    
+      
+        <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+      
+    
+      
+        Use
+        <a href="https://bibiqo.cn/" target="_blank" class="codename">My Bolg</a>
+        as theme
+        
+          , 
+          total visits
+          <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+          times
+        
+      
+    
+      
+        <div class='copyright'>
+        <p><a href="https://bibiqo.cn">Copyright © 2017-2020 Burgess</a></p>
+
+        </div>
+      
+    
+  </footer>
+
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4/dist/jquery.min.js"></script>
+
+
+  <script>
+    
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/" || "/";
+    if (!ROOT.endsWith('/')) ROOT += '/';
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/instant_page.js" type="module" defer integrity="sha384-OeDn4XE77tdHo8pGtE1apMPmAipjoxUQ++eeJa6EtJCfHlvijigWiJpD7VDPWXV1"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+  
+  
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery-backstretch@2.1.18/jquery.backstretch.min.js"></script>
+
+    <script type="text/javascript">
+      $(function(){
+        var imgs=["https://cdn.jsdelivr.net/gh/xaoxuu/cdn-wallpaper/abstract/41F215B9-261F-48B4-80B5-4E86E165259E.jpeg"];
+        if ('true' == 'true') {
+          function shuffle(arr){
+            /*From countercurrent-time*/
+            var n = arr.length;
+            while(n--) {
+              var index = Math.floor(Math.random() * n);
+              var temp = arr[index];
+              arr[index] = arr[n];
+              arr[n] = temp;
+            }
+          }
+          shuffle(imgs);
+        }
+        if ('.cover') {
+          $('.cover').backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        } else {
+          $.backstretch(
+            imgs,
+          {
+            duration: "20000",
+            fade: "1500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js" async></script>
+
+  
+    
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0/dist/Meting.min.js" async></script>
+
+  
+
+
+
+
+
+
+
+
+  
+    
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.2.0/js/valine.js"></script>
+
+  
+  <script>
+  var GUEST_INFO = ['nick','mail','link'];
+  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+    return GUEST_INFO.indexOf(item) > -1
+  });
+  var notify = 'true' == true;
+  var verify = 'true' == true;
+  var valine = new Valine();
+  valine.init({
+    el: '#valine_container',
+    notify: notify,
+    verify: verify,
+    guest_info: guest_info,
+    
+    appId: "MBGwYhDDjv5oP81CbR68kR2k-gzGzoHsz",
+    appKey: "Kx5069XHnpG6CcXjtucWbiib",
+    placeholder: "快来评论吧~",
+    pageSize:'10',
+    avatar:'mp',
+    lang:'zh-cn',
+    visitor: 'false',
+    highlight:'true'
+  })
+  </script>
+
+
+
+  
+<script src="/js/app.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2.1/js/search.js"></script>
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-volantis@2/js/comment_typing.js"></script>
+
+
+
+<!-- 复制 -->
+
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copyed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-clipboard-check');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPYED';
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-exclamation-triangle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+
+<!-- fancybox -->
+
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("div.fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
